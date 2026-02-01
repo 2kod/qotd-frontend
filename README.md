@@ -1,36 +1,71 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# TechLearn QOTD Challenge 🚀
 
-## Getting Started
+Hi there! 👋 This is my submission for the Frontend Technical Task. 
 
-First, run the development server:
+The goal was to design a **Question of the Day (QOTD)** page that doesn't just look good, but actually motivates students to build a daily coding habit.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+**[👉 View the Live Demo Here](https://your-vercel-link-goes-here.app)**
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 💡 My Thought Process
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### 1. The "Monotone Blue" Challenge
+The prompt asked for a monotone blue theme. My first thought was, *"How do I make this look professional, not boring?"* I took inspiration from modern code editors like VS Code and Linear. I used:
+- **Dark Navy** for the code areas (to reduce eye strain).
+- **Bright Royal Blue** strictly for the primary action ("Submit").
+- **Soft Slate/Grey** for secondary text so the page doesn't feel cluttered.
 
-## Learn More
+### 2. Solving the "Habit" Problem
+The biggest challenge in EdTech is retention. Why should a student come back tomorrow? I built the UI around three psychological triggers:
+* **The Streak (Loss Aversion):** I placed a "🔥 12 Day Streak" badge right in the header. It's the first thing you see. Students hate breaking a streak.
+* **The Reward (Dopamine):** When you hit submit, I added a confetti explosion. It’s a small detail, but it makes the success moment feel "earned."
+* **The Trigger:** A "Notify Me" card in the sidebar effectively asks the user permission to remind them tomorrow.
 
-To learn more about Next.js, take a look at the following resources:
+### 3. Layout Strategy
+I went with a **Split-Pane Layout**.
+* **Desktop:** Left side for reading, Right side for coding. This is the industry standard (LeetCode, HackerRank), so it prepares students for real interviews.
+* **Mobile:** I noticed many students read problems on their commute. On mobile, I stacked the layout so the *Problem Statement* comes first. You can read the question easily on a phone, even if you wait to code it later on a laptop.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 🛠 The Tech Stack
+I chose tools that allow for speed without sacrificing performance:
 
-## Deploy on Vercel
+* **Next.js 14 (App Router):** Overkill for a single page? Maybe. But it ensures the page loads instantly (SSR) and gives me a solid structure if we expanded this into a full platform.
+* **Tailwind CSS:** Essential for the 24-hour timeline. It let me tweak the "Monotone Blue" shades instantly without fighting with a CSS file.
+* **Lucide React:** For clean, consistent iconography.
+* **Canvas Confetti:** Because every win deserves a celebration! 🎉
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 🚧 What I'd Improve (With more time)
+Since I built this within the 24-hour window, there are a few things I'd love to polish if this were going into production:
+
+1.  **The Code Editor:** Currently, it's a styled `textarea`. It works for a demo, but in a real app, I would implement **Monaco Editor** (the engine behind VS Code) for line numbers and syntax highlighting.
+2.  **API Integration:** Right now the data is static. I'd love to connect the "Run" button to an execution API (like Piston) to actually compile the code.
+3.  **Keyboard Shortcuts:** Adding `Cmd+Enter` to submit code would be a great UX power-user feature.
+
+---
+
+## 💻 How to Run This Locally
+
+If you want to poke around the code yourself:
+
+1.  Clone the repo:
+    ```bash
+    git clone [https://github.com/your-username/qotd-platform.git](https://github.com/your-username/qotd-platform.git)
+    ```
+2.  Install packages:
+    ```bash
+    npm install
+    ```
+3.  Fire it up:
+    ```bash
+    npm run dev
+    ```
+4.  Open http://localhost:3000
+
+---
+
+*Thanks for the opportunity! I really enjoyed thinking through the UX for this one.*
